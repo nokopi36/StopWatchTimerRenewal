@@ -40,6 +40,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.nokopi.stopwatchtimer.BuildConfig
 import com.nokopi.stopwatchtimer.R
 import com.nokopi.stopwatchtimer.domain.model.ChimePreset
 import com.nokopi.stopwatchtimer.domain.model.ChimeSettings
@@ -136,7 +137,7 @@ fun SettingScreenContent(
             item {
                 // バージョン情報
                 Text(
-                    text = stringResource(R.string.version),
+                    text = stringResource(R.string.version, BuildConfig.VERSION_NAME),
                     style = MaterialTheme.typography.bodySmall,
                     textAlign = TextAlign.End,
                     modifier = Modifier

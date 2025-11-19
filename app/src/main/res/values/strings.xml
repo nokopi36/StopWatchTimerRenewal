@@ -19,7 +19,7 @@
     <string name="end_time_setting">終了時間設定</string>
     <string name="settings_icon">設定</string>
     <string name="time_not_set">--:--:--</string>
-    <string name="version">ver.1.0</string>
+    <string name="version">ver.%1$s</string>
     <string name="reset_all_settings">すべての設定をリセット</string>
     <string name="reset_confirmation_title">設定をリセット</string>
     <string name="reset_confirmation_message">すべての時間設定をリセットしてもよろしいですか？</string>
