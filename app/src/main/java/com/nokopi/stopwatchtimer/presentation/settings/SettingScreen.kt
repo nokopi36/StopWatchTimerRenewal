@@ -21,19 +21,30 @@ fun SettingScreen(
     viewModel: SettingsViewModel = hiltViewModel()
 ) {
     val chimeSettings by viewModel.chimeSettings.collectAsState()
+    val presets by viewModel.presets.collectAsState()
+    val presetNameInput by viewModel.presetNameInput.collectAsState()
+    val errorMessage by viewModel.errorMessage.collectAsState()
+    val showDeleteConfirmDialog by viewModel.showDeleteConfirmDialog.collectAsState()
+
     var showFirstBellDialog by remember { mutableStateOf(false) }
     var showSecondBellDialog by remember { mutableStateOf(false) }
     var showEndChimeDialog by remember { mutableStateOf(false) }
     var showResetConfirmDialog by remember { mutableStateOf(false) }
 
-
     SettingScreenContent(
         chimeSettings = chimeSettings,
+        presets = presets,
+        presetNameInput = presetNameInput,
+        errorMessage = errorMessage,
         onNavigateBack = onNavigateBack,
         onFirstBellClick = { showFirstBellDialog = true },
         onSecondBellClick = { showSecondBellDialog = true },
         onEndChimeClick = { showEndChimeDialog = true },
-        onResetClick = { showResetConfirmDialog = true }
+        onResetClick = { showResetConfirmDialog = true },
+        onPresetNameInputChange = { viewModel.updatePresetNameInput(it) },
+        onSavePreset = { viewModel.savePreset() },
+        onApplyPreset = { viewModel.applyPreset(it) },
+        onDeletePreset = { viewModel.requestDeletePreset(it) }
     )
 
 
@@ -91,6 +102,31 @@ fun SettingScreen(
             dismissButton = {
                 TextButton(
                     onClick = { showResetConfirmDialog = false }
+                ) {
+                    Text(stringResource(R.string.cancel))
+                }
+            }
+        )
+    }
+
+    // プリセット削除確認ダイアログ
+    val presetIdToDelete = showDeleteConfirmDialog
+    if (presetIdToDelete != null) {
+        val presetName = presets.find { it.id == presetIdToDelete }?.name ?: ""
+        AlertDialog(
+            onDismissRequest = { viewModel.cancelDeletePreset() },
+            title = { Text(stringResource(R.string.delete_preset_confirmation_title)) },
+            text = { Text(stringResource(R.string.delete_preset_confirmation_message)) },
+            confirmButton = {
+                TextButton(
+                    onClick = { viewModel.confirmDeletePreset(presetIdToDelete) }
+                ) {
+                    Text(stringResource(R.string.ok))
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = { viewModel.cancelDeletePreset() }
                 ) {
                     Text(stringResource(R.string.cancel))
                 }
