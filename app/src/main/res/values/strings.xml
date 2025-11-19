@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">StopWatchTimerRenewal</string>
+
+    <!-- Timer Screen -->
+    <string name="timer_title">座長タイマー</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="reset">Reset</string>
+    <string name="manual_chime">手動でチャイムを鳴らす</string>
+
+    <!-- Settings Screen -->
+    <string name="settings">設定</string>
+    <string name="back">戻る</string>
+    <string name="first_bell_time">予鈴時間：</string>
+    <string name="second_bell_time">終鈴時間：</string>
+    <string name="end_time">終了時間：</string>
+    <string name="first_bell_setting">予鈴時間設定</string>
+    <string name="second_bell_setting">終鈴時間設定</string>
+    <string name="end_time_setting">終了時間設定</string>
+    <string name="settings_icon">設定</string>
+    <string name="time_not_set">--:--:--</string>
+    <string name="version">ver.1.0</string>
+    <string name="reset_all_settings">すべての設定をリセット</string>
+    <string name="reset_confirmation_title">設定をリセット</string>
+    <string name="reset_confirmation_message">すべての時間設定をリセットしてもよろしいですか？</string>
+
+    <!-- Dialog Buttons -->
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+</resources>
