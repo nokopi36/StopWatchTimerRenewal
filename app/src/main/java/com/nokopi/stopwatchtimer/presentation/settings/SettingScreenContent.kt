@@ -2,7 +2,6 @@ package com.nokopi.stopwatchtimer.presentation.settings
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
@@ -45,7 +43,6 @@ import com.nokopi.stopwatchtimer.R
 import com.nokopi.stopwatchtimer.domain.model.ChimePreset
 import com.nokopi.stopwatchtimer.domain.model.ChimeSettings
 import com.nokopi.stopwatchtimer.presentation.settings.component.ChimeSettingItem
-import com.nokopi.stopwatchtimer.presentation.settings.PresetError
 import com.nokopi.stopwatchtimer.ui.theme.ThemePreview
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
@@ -72,7 +73,9 @@ fun TimerScreenContent(
                 onStopClicked = onStopClicked,
                 onResetClicked = onResetClicked,
                 onManualChimeClicked = onManualChimeClicked,
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier
+                    .navigationBarsPadding()
+                    .padding(16.dp),
             )
         }
     ) { paddingValues ->
